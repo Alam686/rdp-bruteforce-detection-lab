@@ -21,12 +21,22 @@ Investigate repeated failed Windows authentication attempts followed by successf
 ## 4. Investigation Findings
 
 ### Failed Authentication
-- Event ID: 4625
-- Observed failed attempts: 5
-- Source IP: `106.192.188.133`
-- Logon Type: 3
-- Target usernames: Four distinct usernames observed
-- Two failed attempts targeted `sjnjdfjk`.
+
+- **Event ID:** 4625
+- **Observed failed attempts:** 6
+- **Source IP:** `106.192.188.133`
+- **Logon Type:** 3
+- **Distinct target usernames:** 5
+- **Target usernames observed:**
+  - `alam768`
+  - `alamsn`
+  - `ajsbdwebhjb`
+  - `aksndnjf`
+  - `sjnjdfjk`
+- **Repeated target:** `sjnjdfjk` (2 failed attempts)
+
+All six failed authentication events were observed from the same source IP against `VM-Windows` during the investigation window.
+
 
 ### Successful Authentication
 - Event ID: 4624
@@ -43,10 +53,11 @@ The Type 10 event is stronger evidence of a RemoteInteractive logon. Type 3 indi
 | Time (UTC) | Event ID | Account | Logon Type |
 |---|---:|---|---:|
 | 06:36:51.189 | 4625 | alam768 | 3 |
+| 06:37:09.753 | 4625 | alamsn | 3 |
 | 06:37:25.790 | 4625 | ajsbdwebhjb | 3 |
 | 06:37:44.472 | 4625 | aksndnjf | 3 |
-| 06:37:58.999 | 4625 | snjdfjk | 3 |
-| 06:38:13.672 | 4625 | snjdfjk | 3 |
+| 06:37:58.999 | 4625 | sjnjdfjk | 3 |
+| 06:38:13.672 | 4625 | sjnjdfjk | 3 |
 | 06:38:34.715 | 4624 | alam686 | 3 |
 | 06:38:37.031 | 4624 | alam686 | 3 |
 | 06:38:41.675 | 4624 | alam686 | 10 |
