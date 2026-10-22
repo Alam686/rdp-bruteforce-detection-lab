@@ -1,0 +1,15 @@
+SecurityEvent
+| where TimeGenerated between (
+    datetime(2026-10-21 06:30:00) ..
+    datetime(2026-10-21 06:45:00)
+)
+| where Computer has "VM-Windows"
+| where EventID == 4625
+| where IpAddress == "106.192.188.133"
+| summarize
+    FailedAttempts = count(),
+    FirstAttempt = min(TimeGenerated),
+    LastAttempt = max(TimeGenerated),
+    TargetAccounts = make_set(TargetUserName),
+    LogonTypes = make_set(LogonType)
+    by IpAddress, Computer[A[A[A[A[A[A[B[B[B[B[B[B[B
