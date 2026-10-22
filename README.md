@@ -9,7 +9,7 @@ Investigate repeated failed Windows authentication attempts followed by successf
 - Target: VM-Windows
 - Data table: SecurityEvent
 - Investigation date: October 21, 2026
-- Source IP observed: `106.192.188.133`
+- Source IP observed: `106.**.**.**`
 
 ## 3. Lab Methodology
 1. Generated controlled failed RDP authentication attempts.
@@ -24,7 +24,7 @@ Investigate repeated failed Windows authentication attempts followed by successf
 
 - **Event ID:** 4625
 - **Observed failed attempts:** 6
-- **Source IP:** `106.192.188.133`
+- **Source IP:** `106.**.**.**`
 - **Logon Type:** 3
 - **Distinct target usernames:** 5
 - **Target usernames observed:**
@@ -41,7 +41,7 @@ All six failed authentication events were observed from the same source IP again
 ### Successful Authentication
 - Event ID: 4624
 - Account observed: `alam686`
-- Source IP: `106.192.188.133`
+- Source IP: `106.**.**.**`
 - Successful events observed:
   - Logon Type 3: 2 events
   - Logon Type 10: 1 event
